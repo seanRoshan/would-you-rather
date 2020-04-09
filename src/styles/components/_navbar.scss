@@ -1,0 +1,19 @@
+.ui.secondary.pointing.menu{
+  margin-top: 0 !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin {
+    animation: logo-spin-animation infinite 2s linear;
+  }
+}
+
+@keyframes logo-spin-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

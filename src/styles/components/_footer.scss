@@ -1,0 +1,16 @@
+.copy-right {
+  font-size: 12px;
+  color: white;
+
+  .copy-right-link {
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 0 5px;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+      color: #61DAFB;
+    }
+  }
+}
