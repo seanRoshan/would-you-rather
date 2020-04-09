@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/would-you-rather/static/css/main.80db5c97.chunk.css",
-    "main.js": "/would-you-rather/static/js/main.af73edeb.chunk.js",
-    "main.js.map": "/would-you-rather/static/js/main.af73edeb.chunk.js.map",
+    "main.css": "/would-you-rather/static/css/main.3d45a082.chunk.css",
+    "main.js": "/would-you-rather/static/js/main.9af0da47.chunk.js",
+    "main.js.map": "/would-you-rather/static/js/main.9af0da47.chunk.js.map",
     "runtime-main.js": "/would-you-rather/static/js/runtime-main.67b9eade.js",
     "runtime-main.js.map": "/would-you-rather/static/js/runtime-main.67b9eade.js.map",
     "static/css/2.26c6328d.chunk.css": "/would-you-rather/static/css/2.26c6328d.chunk.css",
-    "static/js/2.63cdd53e.chunk.js": "/would-you-rather/static/js/2.63cdd53e.chunk.js",
-    "static/js/2.63cdd53e.chunk.js.map": "/would-you-rather/static/js/2.63cdd53e.chunk.js.map",
+    "static/js/2.ea9a9cee.chunk.js": "/would-you-rather/static/js/2.ea9a9cee.chunk.js",
+    "static/js/2.ea9a9cee.chunk.js.map": "/would-you-rather/static/js/2.ea9a9cee.chunk.js.map",
     "index.html": "/would-you-rather/index.html",
-    "precache-manifest.def9ed7791ab73488ae25578aa7ab9aa.js": "/would-you-rather/precache-manifest.def9ed7791ab73488ae25578aa7ab9aa.js",
+    "precache-manifest.d4dc1d49dffeb38ff0b114506f552265.js": "/would-you-rather/precache-manifest.d4dc1d49dffeb38ff0b114506f552265.js",
     "service-worker.js": "/would-you-rather/service-worker.js",
     "static/css/2.26c6328d.chunk.css.map": "/would-you-rather/static/css/2.26c6328d.chunk.css.map",
-    "static/css/main.80db5c97.chunk.css.map": "/would-you-rather/static/css/main.80db5c97.chunk.css.map",
-    "static/js/2.63cdd53e.chunk.js.LICENSE.txt": "/would-you-rather/static/js/2.63cdd53e.chunk.js.LICENSE.txt",
-    "static/media/Application.scss": "/would-you-rather/static/media/outline-icons.ef60a4f6.woff"
+    "static/css/main.3d45a082.chunk.css.map": "/would-you-rather/static/css/main.3d45a082.chunk.css.map",
+    "static/js/2.ea9a9cee.chunk.js.LICENSE.txt": "/would-you-rather/static/js/2.ea9a9cee.chunk.js.LICENSE.txt",
+    "static/media/Application.scss": "/would-you-rather/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/logo.svg": "/would-you-rather/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.67b9eade.js",
     "static/css/2.26c6328d.chunk.css",
-    "static/js/2.63cdd53e.chunk.js",
-    "static/css/main.80db5c97.chunk.css",
-    "static/js/main.af73edeb.chunk.js"
+    "static/js/2.ea9a9cee.chunk.js",
+    "static/css/main.3d45a082.chunk.css",
+    "static/js/main.9af0da47.chunk.js"
   ]
 }
