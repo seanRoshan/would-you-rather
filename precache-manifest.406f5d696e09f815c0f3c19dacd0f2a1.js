@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff23f52ecd94adbc124f6a99e18baebf",
+    "revision": "55b065b990a8a7474475f95a3dab3ffb",
     "url": "/would-you-rather/index.html"
   },
   {
-    "revision": "8b6e0f83f30a75137d75",
+    "revision": "b34eb586f1fa15ebe361",
     "url": "/would-you-rather/static/css/2.26c6328d.chunk.css"
   },
   {
-    "revision": "8648ea2a8e811942455f",
+    "revision": "841f0f933f2eb3a7f3f9",
     "url": "/would-you-rather/static/css/main.c2bad410.chunk.css"
   },
   {
-    "revision": "8b6e0f83f30a75137d75",
-    "url": "/would-you-rather/static/js/2.553a94a5.chunk.js"
+    "revision": "b34eb586f1fa15ebe361",
+    "url": "/would-you-rather/static/js/2.ec654a19.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/would-you-rather/static/js/2.553a94a5.chunk.js.LICENSE.txt"
+    "url": "/would-you-rather/static/js/2.ec654a19.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8648ea2a8e811942455f",
-    "url": "/would-you-rather/static/js/main.7424dbf1.chunk.js"
+    "revision": "841f0f933f2eb3a7f3f9",
+    "url": "/would-you-rather/static/js/main.d4424b46.chunk.js"
   },
   {
     "revision": "2b8bd607789accbcc63d",
