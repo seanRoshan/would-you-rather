@@ -1,5 +1,7 @@
-.ui.secondary.pointing.menu{
-  margin-top: 0 !important;
+.ui.menu{
+  margin: 0 !important;
+  padding: 10px 10px !important;
+  border-bottom: 1px solid grey !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {

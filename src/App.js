@@ -7,7 +7,6 @@ import {HashRouter} from "react-router-dom";
 import DashboardComponent from "./views/dashboard/dashboard.component";
 import {connect} from "react-redux";
 import {handleInitialData} from "./actions/shared.actions";
-import LoadingBar from "react-redux-loading-bar";
 
 /**
  * @return {boolean}
