@@ -23,10 +23,10 @@ class App extends Component {
                 <div className="header">
                     <NavbarComponent/>
                 </div>
-                <Segment className="content">
+                <Segment className="app-content-container">
                     <DashboardComponent/>
                 </Segment>
-                <div className="footer"><FooterComponent/></div>
+                <div className="app-footer-container"><FooterComponent/></div>
             </HashRouter>
         );
     }
@@ -34,11 +34,11 @@ class App extends Component {
 }
 
 
-function mapStatetoProps({loadingBar}) {
+function mapStateToProps({loadingBar}) {
     return {
         loadingBar
     }
 }
 
 
-export default connect(mapStatetoProps)(App);
+export default connect(mapStateToProps)(App);

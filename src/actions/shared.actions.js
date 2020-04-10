@@ -5,6 +5,6 @@ export function handleInitialData() {
         dispatch(showLoading());
         setTimeout(() => {
             dispatch(hideLoading());
-        }, 3000);
+        }, 500);
     }
 }

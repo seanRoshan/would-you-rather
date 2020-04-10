@@ -1,4 +1,4 @@
-.content {
+.app-content-container {
   min-height: calc(100vh - 115px);
   min-width: calc(100vw - 30px);
   margin: 10px !important;
@@ -7,7 +7,7 @@
 }
 
 
-.footer {
+.app-footer-container {
   position: fixed;
   width: 100%;
   bottom: 0;

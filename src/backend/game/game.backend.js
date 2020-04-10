@@ -18,6 +18,18 @@ export class GameBackend {
         })
     }
 
+    static signIn(userId) {
+        return new Promise(((resolve, reject) => {
+            for (let userKey in users) {
+                if (userKey === userId) {
+                    setTimeout(() => resolve(userId), 1000);
+                    return;
+                }
+            }
+            reject("Invalid user!");
+        }));
+    }
+
     static formatQuestion({optionOneText, optionTwoText, author}) {
         return {
             id: GameBackend.generateUID(),
