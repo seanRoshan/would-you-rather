@@ -57,8 +57,7 @@ function MobileNavbarComponent(props) {
                                                name='Leader Board'>
                                     Leader Board</Dropdown.Item>
                                 <Dropdown.Divider/>
-                                <Dropdown.Item as={Button}
-                                               onClick={() => {
+                                <Dropdown.Item onClick={() => {
                                                    signOut()
                                                }}
                                                icon='sign-out'
