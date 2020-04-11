@@ -1,7 +1,7 @@
 .app-content-container {
   min-height: calc(100vh - 115px);
-  min-width: calc(100vw - 30px);
-  margin: 10px !important;
+  max-width: 648px;
+  margin: 10px auto !important;
   padding: 10px !important;
   border: none;
 }

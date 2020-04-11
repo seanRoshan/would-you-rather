@@ -20,9 +20,9 @@ class QuestionInfoComponent extends Component {
                         </Grid.Column>
                         <Grid.Column verticalAlign='top'>
                             <Header textAlign={"left"} size={"medium"}>Would you rather?</Header>
-                            <Header textAlign={"left"} size={"small"}>{`${optionOne}`}</Header>
-                            <Header textAlign={"left"} size={"small"}>Or</Header>
-                            <Header textAlign={"left"} size={"small"}>{`${optionTwo}`}</Header>
+                            <Header textAlign={"center"} size={"small"}>{`${optionOne}`}</Header>
+                            <Header textAlign={"center"} size={"small"}>OR</Header>
+                            <Header textAlign={"center"} size={"small"}>{`${optionTwo}`}</Header>
                             {authenticatedUserAnswer && (<Header textAlign={"left"} size={"large"}
                                                                  color="blue">{`Your Answer: ${authenticatedUserAnswer}`}</Header>)}
                         </Grid.Column>

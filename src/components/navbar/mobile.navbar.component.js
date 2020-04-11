@@ -9,7 +9,7 @@ function MobileNavbarComponent(props) {
     const {isLoading, authenticatedUser, signOut} = props;
 
     return (
-        <Menu size='large' secondary>
+        <Menu size='large' secondary className="application-navbar">
             <Menu.Item>
                 <Image src={logo}
                        size='mini'
