@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import HomeComponent from "./home/home.component";
 
 class DashboardComponent extends Component {
+
     render() {
 
         const {authenticatedUser} = this.props;
