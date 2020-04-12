@@ -5,6 +5,16 @@ The "Would You Rather?" Project, is a web app that lets a user play the “Would
 In your app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
 
+## How to start
+
+In the project directory, you can run:
+
+### `yarn install`
+### `yarn start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 ## Project Structure
 ```bash
 ├── README.md - This file.
