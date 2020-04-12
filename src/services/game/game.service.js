@@ -1,5 +1,7 @@
 import {GameBackend} from "../../backend/game/game.backend";
 
+const medalColors = ["yellow", "teal", "grey"];
+
 export class GameService {
 
     static getInitialData() {
@@ -16,13 +18,39 @@ export class GameService {
         return GameBackend.getUsers();
     }
 
-    static signIn(userId){
+    static signIn(userId) {
         return GameBackend.signIn(userId);
     }
 
     static getQuestions() {
         return GameBackend.getQuestions();
     }
+
+    static generateScoreBoardCards(users) {
+        if (!users) return [];
+        return Object.keys(users)
+            .map((userId) => {
+                const user = users[userId];
+                const answered = Object.keys(user.answers).length;
+                const asked = Object.keys(user.questions).length;
+                return {
+                    id: userId,
+                    name: user.name,
+                    avatar: user.avatarURL,
+                    answered,
+                    asked,
+                    score: answered + asked,
+                    medalColor: ""
+                }
+            })
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 3)
+            .map((userScoreCard, index) => ({
+                ...userScoreCard,
+                medalColor: medalColors[index]
+            }));
+    }
+
 
     static generateQuestionBasicCardInfo(authenticatedUser, questionId, users, questions) {
 

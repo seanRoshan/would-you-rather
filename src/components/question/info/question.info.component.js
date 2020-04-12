@@ -24,7 +24,7 @@ class QuestionInfoComponent extends Component {
                             <Header textAlign={"center"} size={"small"}>OR</Header>
                             <Header textAlign={"center"} size={"small"}>{`${optionTwo}`}</Header>
                             {authenticatedUserAnswer && (<Header textAlign={"left"} size={"large"}
-                                                                 color="blue">{`Your Answer: ${authenticatedUserAnswer}`}</Header>)}
+                                                                 color="teal">{`Your Answer: ${authenticatedUserAnswer}`}</Header>)}
                         </Grid.Column>
                     </Grid>
                 </CardContent>

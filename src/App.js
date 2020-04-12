@@ -17,7 +17,7 @@ class App extends Component {
                 <div className="header">
                     <NavbarComponent/>
                 </div>
-                <Segment className="app-content-container">
+                <Segment basic className="app-content-container">
                     <DashboardComponent/>
                 </Segment>
                 <div className="app-footer-container"><FooterComponent/></div>
