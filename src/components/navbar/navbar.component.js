@@ -4,13 +4,13 @@ import {Responsive} from "semantic-ui-react";
 import LoadingBar from "react-redux-loading-bar";
 import WideNavbarComponent from "./wide.navbar.component";
 import MobileNavbarComponent from "./mobile.navbar.component";
-import {setAuthenticatedUser} from "../../actions/authenticatedUser.action";
+import {handleSignOut} from "../../actions/shared.actions";
 
 class NavbarComponent extends Component {
 
     signOut() {
         const {dispatch} = this.props;
-        dispatch(setAuthenticatedUser(null));
+        dispatch(handleSignOut());
     }
 
 

@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
-import {handleInitialData} from "../../../actions/shared.actions";
 import {connect} from "react-redux";
 import QuestionListComponent from "../../../components/question/list/question.list.component";
 import {Tab} from "semantic-ui-react";
 import {GameService} from "../../../services";
 
 class HomeComponent extends Component {
-
-    componentDidMount() {
-        this.props.dispatch(handleInitialData())
-    }
 
     render() {
 

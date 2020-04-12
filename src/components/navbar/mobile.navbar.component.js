@@ -17,7 +17,7 @@ function MobileNavbarComponent(props) {
                        className={isLoading ? "spin" : ""}
                 />
             </Menu.Item>
-            {!authenticatedUser && (<Menu.Item header>Would you rather?</Menu.Item>)}
+            {!authenticatedUser && (<Menu.Item header>Would you rather...</Menu.Item>)}
             {authenticatedUser && (<Menu.Item header>
                 <Image src={authenticatedUser.avatarURL}
                        size='mini'
@@ -45,7 +45,7 @@ function MobileNavbarComponent(props) {
                                                name='home'>
                                     Home</Dropdown.Item>
                                 <Dropdown.Item as={NavLink}
-                                               to="/new"
+                                               to="/add"
                                                exact
                                                activeClassName='active'
                                                name='New Question'>

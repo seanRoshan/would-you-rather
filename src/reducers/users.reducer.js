@@ -8,6 +8,17 @@ export default function users(state = {}, action) {
                 ...action.users
             }
         }
+        case USERS_ACTION_TYPES.ASK_QUESTION: {
+            const {authenticatedUserId, questionId} = action;
+            console.warn({authenticatedUserId, questionId});
+            return {
+                ...state,
+                [authenticatedUserId]: {
+                    ...state[authenticatedUserId],
+                    questions: state[authenticatedUserId].questions.concat(questionId)
+                }
+            }
+        }
         default: {
             return state;
         }

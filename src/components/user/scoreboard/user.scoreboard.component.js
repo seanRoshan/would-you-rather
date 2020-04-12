@@ -7,10 +7,10 @@ function UserScoreboardComponent(props) {
 
     const {scoreBoardCard} = props;
 
-    const {id, name, avatar, answered, asked, score, medalColor} = scoreBoardCard;
+    const {name, avatar, answered, asked, score, medalColor} = scoreBoardCard;
 
     return (
-        <Segment color={medalColor} raised >
+        <Segment color={medalColor} raised>
             <Label as='a' color={medalColor} ribbon icon='trophy'/>
             <Grid columns={3} verticalAlign={"middle"}>
                 <Grid.Row>
@@ -40,7 +40,7 @@ function UserScoreboardComponent(props) {
                     </Grid.Column>
                     <Grid.Column>
                         <Card>
-                            <Card.Content textAlign={"center"}  header='Score'/>
+                            <Card.Content textAlign={"center"} header='Score'/>
                             <CardContent textAlign={"center"}>
                                 <Label circular color={medalColor} key={medalColor}>
                                     {score}

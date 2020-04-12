@@ -19,7 +19,7 @@ class DashboardComponent extends Component {
                         ? <HomeComponent/>
                         : <Redirect to="/login"/>;
                 }}/>
-                <Route path="/new" render={() => {
+                <Route path="/add" render={() => {
                     return authenticatedUser
                         ? <ComposeComponent/>
                         : <Redirect to="/login"/>;

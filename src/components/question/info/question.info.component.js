@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {Button, Card, CardContent, Grid, Header, Image} from "semantic-ui-react";
+import {Button, Card, CardContent, Divider, Grid, Header, Image} from "semantic-ui-react";
 import {Link} from "react-router-dom";
 
 class QuestionInfoComponent extends Component {
@@ -19,9 +19,9 @@ class QuestionInfoComponent extends Component {
                             <Image src={authorAvatar} size='small' circular/>
                         </Grid.Column>
                         <Grid.Column verticalAlign='top'>
-                            <Header textAlign={"left"} size={"medium"}>Would you rather?</Header>
+                            <Header textAlign={"left"} size={"medium"}>Would you rather...</Header>
                             <Header textAlign={"center"} size={"small"}>{`${optionOne}`}</Header>
-                            <Header textAlign={"center"} size={"small"}>OR</Header>
+                            <Divider horizontal>Or</Divider>
                             <Header textAlign={"center"} size={"small"}>{`${optionTwo}`}</Header>
                             {authenticatedUserAnswer && (<Header textAlign={"left"} size={"large"}
                                                                  color="teal">{`Your Answer: ${authenticatedUserAnswer}`}</Header>)}

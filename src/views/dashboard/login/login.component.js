@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {handleReceiveUsers} from "../../../actions/users.actions";
 import {Card, CardHeader, Dropdown, Header, Image, Responsive} from "semantic-ui-react";
-import {handleSetAuthenticatedUser} from "../../../actions/authenticatedUser.action";
+import {handleSignIn} from "../../../actions/shared.actions";
 
 class LoginComponent extends Component {
 
@@ -26,7 +26,7 @@ class LoginComponent extends Component {
 
     signIn(userId) {
         const {dispatch} = this.props;
-        dispatch(handleSetAuthenticatedUser(userId));
+        dispatch(handleSignIn(userId));
     }
 
     render() {

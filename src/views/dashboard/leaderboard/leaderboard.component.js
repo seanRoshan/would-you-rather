@@ -12,9 +12,6 @@ class LeaderboardComponent extends Component {
             ? GameService.generateScoreBoardCards(users)
             : [];
 
-
-        console.log(userScoreBoards);
-
         return (userScoreBoards && userScoreBoards.length)
             ? userScoreBoards.map((scoreBoardCard) => (
                 <UserScoreboardComponent key={scoreBoardCard.id} scoreBoardCard={scoreBoardCard}/>))
@@ -24,10 +21,10 @@ class LeaderboardComponent extends Component {
     }
 }
 
-function mapStateToPros({users}) {
+function mapStateToProps({users}) {
     return {
         users
     }
 }
 
-export default connect(mapStateToPros)(LeaderboardComponent);
+export default connect(mapStateToProps)(LeaderboardComponent);

@@ -2,7 +2,8 @@ import {hideLoading, showLoading} from "react-redux-loading-bar";
 import {GameService} from "../services";
 
 export const USERS_ACTION_TYPES = {
-    RECEIVE_USERS: "RECEIVE_USERS"
+    RECEIVE_USERS: "RECEIVE_USERS",
+    ASK_QUESTION: "ASK_QUESTION"
 };
 
 export function receiveUsers(users) {
@@ -20,5 +21,13 @@ export function handleReceiveUsers() {
             dispatch(receiveUsers(users));
             dispatch(hideLoading());
         });
+    }
+}
+
+export function askQuestion(authenticatedUserId, questionId) {
+    return {
+        type: USERS_ACTION_TYPES.ASK_QUESTION,
+        authenticatedUserId,
+        questionId
     }
 }

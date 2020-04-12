@@ -17,7 +17,7 @@ function WideNavbarComponent(props) {
                        className={isLoading ? "spin" : ""}
                 />
             </Menu.Item>
-            {!authenticatedUser && (<Menu.Item header>Would you rather?</Menu.Item>)}
+            {!authenticatedUser && (<Menu.Item header>Would you rather...</Menu.Item>)}
             {authenticatedUser && (
                 <React.Fragment>
                     <Menu.Item header>
@@ -38,7 +38,7 @@ function WideNavbarComponent(props) {
                     />
                     <Menu.Item
                         as={NavLink}
-                        to="/new"
+                        to="/add"
                         exact
                         activeClassName='active'
                         name='New Question'

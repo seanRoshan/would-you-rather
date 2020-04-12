@@ -8,6 +8,18 @@ export default function questions(state = {}, action) {
                 ...action.questions
             }
         }
+        case QUESTIONS_ACTION_TYPES.ADD_QUESTION: {
+
+            const {question} = action;
+
+            return {
+                ...state,
+                [question.id]: question
+            }
+        }
+        case QUESTIONS_ACTION_TYPES.RESET_QUESTIONS: {
+            return {}
+        }
         default: {
             return state;
         }
