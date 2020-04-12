@@ -4,6 +4,87 @@ The "Would You Rather?" Project, is a web app that lets a user play the “Would
 
 In your app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
+
+## Project Structure
+```bash
+├── README.md - This file.
+├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── public
+│   ├── favicon.ico   # React Icon, You may change if you wish.
+│   ├── manifest.json # provides metadata used when your web app is installed on a user's mobile device
+│   └── index.html    # DO NOT MODIFY
+└── src
+    ├── actions
+    │   ├── authenticatedUser.action.js            # Actions to work with authernicatedUser store
+    │   ├── questions.action.js                    # Actions to work with questions store
+    │   ├── shared.action.js                       # Actions to handle all shared actions
+    │   └── users.action.js                        # Actions to works with users store
+    ├── assets
+    │   └── logo.svg                       # React logo on the navbar
+    ├── backend
+    │   └──  game
+    │        ├── data      
+    │        │    ├── index.js        # index file for data storage
+    │        │    ├── questions.js    # Questions database
+    │        │    └── users.js        # Users database
+    │        └── game.backend.js    # Backend mock server
+    ├── components
+    │   ├──  error
+    │   │    └── error.component.js        # Error component to show error messsage
+    │   ├──  footer
+    │   │    └── footer.component.js       # Footer component to show page footer
+    │   ├──  navbar
+    │   │    ├── mobile.navbar.component.js       # Navbar component for mobie
+    │   │    ├── navbar.component.js              # Navbar component to manage reponsive navbars
+    │   │    └── wide.navbar.component.js         # Navbar component for wide screens
+    │   ├──  question
+    │   │    ├── answer      
+    │   │    │    └── question.answer.component.js    # Component to recieve answer from user
+    │   │    ├── info    
+    │   │    │    └── question.info.component.js      # Component to show basic question info on home page
+    │   │    ├── list       
+    │   │    │    └── question.list.component.js      # Component to show list of questions on home page  
+    │   │    └── result 
+    │   │    │    └── question.result.component.js    # Component to show result page for each answered question     
+    │   └──  user
+    │        ├── scoreboard      
+    │        │    └── user.scoreboard.component.js    # Component to show each scoreboard result for top 3 users
+    │        ├── vote    
+    │        └── user.vote.component.js          # Component to user vote in the result page
+    ├── middlewares
+    │   ├── index.js                        # Apply middlewares in order in this file
+    │   └── logger.middleware.js            # Middleware to log states and actions
+    ├── reducers
+    │   ├── authenticatedUser.reducer.js            # Reducer to for authenticatedUser store
+    │   ├── questions.reducer.js                    # Reducer to for questions store
+    │   ├── shared.reducer.js                       # Combine reducers 
+    │   └── users.reducer.js                        # Reducer to for users store
+    ├── services
+    │   ├── game.service.js                # Game service to make api calls 
+    │   └── index.js # index of services 
+    ├── styles                             # contain all styles 
+    ├── views
+    │   └──  dashboard
+    │        ├── compose      
+    │        │    └── compose.component.js            # View to add a new question
+    │        ├── detail    
+    │        │    └── detail.component.js             # View to show either result or get answer from user
+    │        ├── home       
+    │        │    └── home.component.js               # View to show answered and unanswered questions
+    │        ├── leaderboard 
+    │        │   └── leaderboard.component.js         # View to show leaderboard
+    │        ├── login 
+    │        │   └── login.component.js               # View to show login page
+    │        ├── notfound
+    │        │   └── notfound.component.js            # View to show 404 not found page
+    │        └── dashboard.component.js               # Main views specific for would you rather project and handle routes
+    │  
+    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
+    ├── index.css # Global styles. You probably won't need to change anything here.
+    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+```
+
+
 ## Data
 
 There are two types of objects stored in our database:
@@ -46,22 +127,22 @@ Voting options are attached to questions. They include:
 
 Your code will talk to the database via 4 methods:
 
-* `_getUsers()`
-* `_getQuestions()`
-* `_saveQuestion(question)`
-* `_saveQuestionAnswer(object)`
+* `getUsers()`
+* `getQuestions()`
+* `saveQuestion(question)`
+* `saveQuestionAnswer(object)`
 
-1) `_getUsers()` Method
+1) `getUsers()` Method
 
 *Description*: Get all of the existing users from the database.  
 *Return Value*: Object where the key is the user’s id and the value is the user object.
 
-2) `_getQuestions()` Method
+2) `getQuestions()` Method
 
 *Description*: Get all of the existing questions from the database.  
 *Return Value*: Object where the key is the question’s id and the value is the question object.
 
-3) `_saveQuestion(question)` Method
+3) `saveQuestion(question)` Method
 
 *Description*: Save the polling question in the database.  
 *Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
@@ -82,14 +163,14 @@ Your code will talk to the database via 4 methods:
 | optionTwo | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
 |timestamp|String | The time when the question was created|
 
-4) `_saveQuestionAnswer(object)` Method
+4) `saveQuestionAnswer(object)` Method
 
 *Description*: Save the answer to a particular polling question in the database.
-*Parameters*: Object that contains the following properties: `authedUser`, `qid`, and `answer`. More details about these properties:
+*Parameters*: Object that contains the following properties: `AuthenticatedUser`, `qid`, and `answer`. More details about these properties:
 
 | Attribute | Type | Description |
 |-----------------|------------------|-------------------|
-| authedUser | String | The id of the user who answered the question|
+| AuthenticatedUser | String | The id of the user who answered the question|
 | qid | String | The id of the question that was answered|
 | answer | String | The option the user selected. The value should be either `"optionOne"` or `"optionTwo"`|
 
