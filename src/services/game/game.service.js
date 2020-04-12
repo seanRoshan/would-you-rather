@@ -76,6 +76,8 @@ export class GameService {
             questionId,
             optionOne: question.optionOne.text,
             optionTwo: question.optionTwo.text,
+            optionOneVotes: question.optionOne.votes ? question.optionOne.votes.length : 0,
+            optionTwoVotes: question.optionTwo.votes ? question.optionTwo.votes.length : 0,
             authenticatedUserAnswer: authenticatedUserAnswer ? authenticatedUserAnswer.text : "",
             authorId: question.author,
             authorName: user.name,

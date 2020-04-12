@@ -66,8 +66,6 @@ class ComposeComponent extends Component {
                     </Form>
                 </CardContent>
             </Card>
-
-
         );
     }
 }

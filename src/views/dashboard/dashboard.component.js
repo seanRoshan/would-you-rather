@@ -5,6 +5,7 @@ import LeaderboardComponent from "./leaderboard/leaderboard.component";
 import LoginComponent from "./login/login.component";
 import {connect} from "react-redux";
 import HomeComponent from "./home/home.component";
+import DetailComponent from "./detail/detail.component";
 
 class DashboardComponent extends Component {
 
@@ -27,6 +28,11 @@ class DashboardComponent extends Component {
                 <Route path="/leaderboard" render={() => {
                     return authenticatedUser
                         ? <LeaderboardComponent/>
+                        : <Redirect to="/login"/>;
+                }}/>
+                <Route path="/questions/:id" render={({match}) => {
+                    return authenticatedUser
+                        ? <DetailComponent match={match}/>
                         : <Redirect to="/login"/>;
                 }}/>
                 <Route path="/login" render={() => {

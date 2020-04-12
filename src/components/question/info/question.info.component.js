@@ -28,8 +28,8 @@ class QuestionInfoComponent extends Component {
                         </Grid.Column>
                     </Grid>
                 </CardContent>
-                <Button secondary attached='top' as={Link} to={`/questions/${questionCard.questionId}`}>View
-                    Poll</Button>
+                <Button secondary attached='top' as={Link} to={`/questions/${questionCard.questionId}`}>
+                    View Poll</Button>
             </Card>
         );
     }
