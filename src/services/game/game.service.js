@@ -30,7 +30,7 @@ export class GameService {
         return GameBackend.saveQuestion(question);
     }
 
-    static saveQuestionAnswer(questionAnswer){
+    static saveQuestionAnswer(questionAnswer) {
         return GameBackend.saveQuestionAnswer(questionAnswer);
     }
 
@@ -74,7 +74,7 @@ export class GameService {
 
         const question = questions[questionId];
         const user = users[question.author];
-        const authenticatedUserAnswer = questions[questionId][users[authenticatedUser]["answers"][questionId]];
+        const authenticatedUserAnswer = authenticatedUser ? questions[questionId][users[authenticatedUser]["answers"][questionId]] : "";
 
         return {
             questionId,
@@ -84,8 +84,8 @@ export class GameService {
             optionTwoVotes: question.optionTwo.votes ? question.optionTwo.votes.length : 0,
             authenticatedUserAnswer: authenticatedUserAnswer ? authenticatedUserAnswer.text : "",
             authorId: question.author,
-            authorName: user.name,
-            authorAvatar: user.avatarURL
+            authorName: user ? user.name : "",
+            authorAvatar: user ? user.avatarURL : ""
         }
     }
 

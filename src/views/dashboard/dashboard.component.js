@@ -17,11 +17,7 @@ class DashboardComponent extends Component {
         return (
             <React.Fragment>
                 <Switch>
-                    <Route path="/" exact render={() => {
-                        return authenticatedUser
-                            ? <HomeComponent/>
-                            : <Redirect to="/login"/>;
-                    }}/>
+                    <Route path="/" exact component={HomeComponent}/>
                     <Route path="/add" render={() => {
                         return authenticatedUser
                             ? <ComposeComponent/>

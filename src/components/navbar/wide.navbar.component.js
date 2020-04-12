@@ -17,7 +17,18 @@ function WideNavbarComponent(props) {
                        className={isLoading ? "spin" : ""}
                 />
             </Menu.Item>
-            {!authenticatedUser && (<Menu.Item header>Would you rather...</Menu.Item>)}
+            {!authenticatedUser && (
+                <React.Fragment>
+                    <Menu.Item header>Would you rather...</Menu.Item>
+                    <Menu.Item
+                        as={NavLink}
+                        to="/"
+                        exact
+                        activeClassName='active'
+                        name='home'
+                    />
+                </React.Fragment>
+            )}
             {authenticatedUser && (
                 <React.Fragment>
                     <Menu.Item header>

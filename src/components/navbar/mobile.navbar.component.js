@@ -58,20 +58,28 @@ function MobileNavbarComponent(props) {
                                     Leader Board</Dropdown.Item>
                                 <Dropdown.Divider/>
                                 <Dropdown.Item onClick={() => {
-                                                   signOut()
-                                               }}
+                                    signOut()
+                                }}
                                                icon='sign-out'
                                                text='Sign Out'/>
                             </React.Fragment>
                         )}
                         {!authenticatedUser && (
-                            <Dropdown.Item as={NavLink}
-                                           to="/login"
-                                           exact
-                                           activeClassName='active'
-                                           name="sign-in"
-                                           icon='sign-in'
-                                           text='Sign In'/>
+                            <React.Fragment>
+                                <Dropdown.Item as={NavLink}
+                                               to="/"
+                                               exact
+                                               activeClassName='active'
+                                               name='home'>
+                                    Home</Dropdown.Item>
+                                <Dropdown.Item as={NavLink}
+                                               to="/login"
+                                               exact
+                                               activeClassName='active'
+                                               name="sign-in"
+                                               icon='sign-in'
+                                               text='Sign In'/>
+                            </React.Fragment>
                         )}
                     </Dropdown.Menu>
                 </Dropdown>

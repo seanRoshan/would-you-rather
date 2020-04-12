@@ -5,11 +5,18 @@ import {Segment} from "semantic-ui-react";
 import FooterComponent from "./components/footer/footer.component";
 import {HashRouter} from "react-router-dom";
 import DashboardComponent from "./views/dashboard/dashboard.component";
+import {connect} from "react-redux";
+import {getInitialData} from "./actions/shared.actions";
 
 /**
  * @return {boolean}
  */
 class App extends Component {
+
+    componentDidMount() {
+        const {dispatch} = this.props;
+        dispatch(getInitialData())
+    }
 
     render() {
         return (
@@ -27,4 +34,5 @@ class App extends Component {
 
 }
 
-export default App;
+
+export default connect()(App);

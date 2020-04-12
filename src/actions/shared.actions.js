@@ -1,9 +1,21 @@
 import {hideLoading, showLoading} from "react-redux-loading-bar";
-import {askQuestion, updateAnswers} from "./users.actions";
+import {askQuestion, receiveUsers, updateAnswers} from "./users.actions";
 import {addQuestion, receiveQuestions, resetQuestions, updateVotes} from "./questions.actions";
 import {GameService} from "../services";
 import {setAuthenticatedUser} from "./authenticatedUser.action";
 
+
+export function getInitialData() {
+    return (dispatch) => {
+        dispatch(showLoading());
+        GameService.getInitialData()
+            .then(({users, questions}) => {
+                dispatch(receiveQuestions(questions));
+                dispatch(receiveUsers(users));
+                dispatch(hideLoading());
+            })
+    }
+}
 
 export function handleAddNewQuestion(question) {
     return (dispatch) => {
@@ -45,7 +57,6 @@ export function handleSignIn(authenticatedUser) {
 
 export function handleSignOut() {
     return (dispatch) => {
-        dispatch(resetQuestions());
         dispatch(setAuthenticatedUser(null));
     }
 }
