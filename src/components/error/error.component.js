@@ -13,7 +13,7 @@ function ErrorComponent(props) {
                         <Icon name='warning sign' size='massive'/>
                     </Grid.Column>
                     <Grid.Column textAlign={"left"} verticalAlign={"middle"}>
-                        <Header inverted color={"white"} size={"large"}>{message}</Header>
+                        <Header inverted size={"large"}>{message}</Header>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

@@ -3,6 +3,7 @@ import QuestionAnswerComponent from "../../../components/question/answer/questio
 import {connect} from "react-redux";
 import QuestionResultComponent from "../../../components/question/result/question.result.component";
 import {GameService} from "../../../services";
+import {withRouter} from "react-router-dom";
 
 class DetailComponent extends Component {
 
@@ -11,6 +12,10 @@ class DetailComponent extends Component {
         const activeUser = users[authenticatedUser];
         const isAnswered = Object.keys(activeUser.answers).includes(id);
         const questionCard = GameService.generateQuestionBasicCardInfo(authenticatedUser, id, users, questions);
+
+        if (!questions.hasOwnProperty(id)) {
+            this.props.history.push("/not-found")
+        }
 
         return isAnswered
             ? (<QuestionResultComponent questionCard={questionCard}/>)
@@ -29,5 +34,5 @@ function mapStateToProps({authenticatedUser, users, questions}, {match}) {
     }
 }
 
-export default connect(mapStateToProps)(DetailComponent);
+export default withRouter(connect(mapStateToProps)(DetailComponent));
 
