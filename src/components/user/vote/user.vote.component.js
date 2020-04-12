@@ -6,7 +6,7 @@ function UserVoteComponent(props) {
     const {userVoteCard} = props;
 
     const {isUserVote, text, votes, total} = userVoteCard;
-    const percentage = (votes * 100) / total;
+    const percentage = ((votes * 100) / total).toFixed(2);
 
     return (
         <Segment tertiary={isUserVote} color={isUserVote ? "green" : "black"} raised={isUserVote}>

@@ -10,12 +10,25 @@ export default function users(state = {}, action) {
         }
         case USERS_ACTION_TYPES.ASK_QUESTION: {
             const {authenticatedUserId, questionId} = action;
-            console.warn({authenticatedUserId, questionId});
             return {
                 ...state,
                 [authenticatedUserId]: {
                     ...state[authenticatedUserId],
                     questions: state[authenticatedUserId].questions.concat(questionId)
+                }
+            }
+        }
+        case USERS_ACTION_TYPES.UPDATE_ANSWERS: {
+            const {questionAnswer} = action;
+            const {qid, authenticatedUser, answer} = questionAnswer;
+            return {
+                ...state,
+                [authenticatedUser]: {
+                    ...state[authenticatedUser],
+                    answers: {
+                        ...state[authenticatedUser].answers,
+                        [qid]: answer
+                    }
                 }
             }
         }

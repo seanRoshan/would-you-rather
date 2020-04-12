@@ -1,10 +1,8 @@
-import {hideLoading, showLoading} from "react-redux-loading-bar";
-import {GameService} from "../services";
-
 export const QUESTIONS_ACTION_TYPES = {
     RECEIVE_QUESTIONS: "RECEIVE_QUESTIONS",
     ADD_QUESTION: "ADD_QUESTION",
     RESET_QUESTIONS: "RESET_QUESTIONS",
+    UPDATE_VOTES: "UPDATE_VOTES"
 };
 
 export function receiveQuestions(questions) {
@@ -21,18 +19,12 @@ export function resetQuestions() {
     }
 }
 
-
-export function handleReceiveQuestions() {
-    return (dispatch) => {
-        dispatch(showLoading());
-        GameService.getQuestions()
-            .then((questions) => {
-                dispatch(receiveQuestions(questions));
-                dispatch(hideLoading());
-            });
+export function updateVotes(questionAnswer) {
+    return {
+        type: QUESTIONS_ACTION_TYPES.UPDATE_VOTES,
+        questionAnswer
     }
 }
-
 
 export function addQuestion(question) {
     return {

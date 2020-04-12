@@ -28,11 +28,11 @@ class QuestionResultComponent extends Component {
         return (
             <Card fluid>
                 <Card.Content header={`Asked by ${authorName}`}/>
-                <CardContent >
+                <CardContent>
                     <Grid columns={2} divided>
                         <Grid.Row>
                             <Grid.Column textAlign={"center"} verticalAlign={"middle"}>
-                                <Image src={authorAvatar} alt={`avatar of ${authorName}`} size={"large"} circular/>
+                                <Image src={authorAvatar} alt={`avatar of ${authorName}`} size={"small"} circular/>
                             </Grid.Column>
                             <Grid.Column>
                                 <Header size={"large"}>Result:</Header>
@@ -47,9 +47,8 @@ class QuestionResultComponent extends Component {
     }
 }
 
-function mapStateToProps({authenticatedUser}, {id, questionCard}) {
+function mapStateToProps({authenticatedUser}, {questionCard}) {
     return {
-        id,
         questionCard,
         authenticatedUser
     }

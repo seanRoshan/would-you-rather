@@ -3,7 +3,8 @@ import {GameService} from "../services";
 
 export const USERS_ACTION_TYPES = {
     RECEIVE_USERS: "RECEIVE_USERS",
-    ASK_QUESTION: "ASK_QUESTION"
+    ASK_QUESTION: "ASK_QUESTION",
+    UPDATE_ANSWERS: "UPDATE_ANSWERS"
 };
 
 export function receiveUsers(users) {
@@ -29,5 +30,12 @@ export function askQuestion(authenticatedUserId, questionId) {
         type: USERS_ACTION_TYPES.ASK_QUESTION,
         authenticatedUserId,
         questionId
+    }
+}
+
+export function updateAnswers(questionAnswer) {
+    return {
+        type: USERS_ACTION_TYPES.UPDATE_ANSWERS,
+        questionAnswer
     }
 }

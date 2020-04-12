@@ -30,6 +30,10 @@ export class GameService {
         return GameBackend.saveQuestion(question);
     }
 
+    static saveQuestionAnswer(questionAnswer){
+        return GameBackend.saveQuestionAnswer(questionAnswer);
+    }
+
     static generateScoreBoardCards(users) {
         if (!users) return [];
         return Object.keys(users)

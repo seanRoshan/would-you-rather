@@ -13,8 +13,8 @@ class DetailComponent extends Component {
         const questionCard = GameService.generateQuestionBasicCardInfo(authenticatedUser, id, users, questions);
 
         return isAnswered
-            ? (<QuestionResultComponent id={id} questionCard={questionCard}/>)
-            : (<QuestionAnswerComponent id={id}/>)
+            ? (<QuestionResultComponent questionCard={questionCard}/>)
+            : (<QuestionAnswerComponent questionCard={questionCard}/>)
     }
 
 }
