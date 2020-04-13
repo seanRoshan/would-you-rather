@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {handleReceiveUsers} from "../../../actions/users.actions";
 import {Card, CardHeader, Dropdown, Header, Image, Responsive} from "semantic-ui-react";
 import {handleSignIn} from "../../../actions/shared.actions";
+import {withRouter} from "react-router-dom";
 
 class LoginComponent extends Component {
 
@@ -20,13 +21,26 @@ class LoginComponent extends Component {
     }
 
     componentDidMount() {
-        const {dispatch, users} = this.props;
-        dispatch(handleReceiveUsers(users));
+        const {dispatch, users, redirectToReferrer} = this.props;
+        return redirectToReferrer ? this.redirect() : dispatch(handleReceiveUsers(users));
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {redirectToReferrer} = this.props;
+        return redirectToReferrer ? this.redirect() : "";
+    }
+
+
+    redirect() {
+        const {location} = this.props;
+        const previousPath = location && location.state && location.state.from && location.state.from.pathname
+            ? location.state.from.pathname : "";
+        this.props.history.push(previousPath);
     }
 
     signIn(userId) {
         const {dispatch} = this.props;
-        dispatch(handleSignIn(userId));
+        dispatch(handleSignIn(userId))
     }
 
     render() {
@@ -35,6 +49,7 @@ class LoginComponent extends Component {
         const subHeader = "Please sign in to continue";
 
         const {users} = this.props;
+
 
         let userOptions = LoginComponent.initializeUserOptions(users);
 
@@ -75,10 +90,11 @@ class LoginComponent extends Component {
 }
 
 
-function mapStateToProps({users}) {
+function mapStateToProps({authenticatedUser, users}) {
     return {
-        users
+        users,
+        redirectToReferrer: !!authenticatedUser
     }
 }
 
-export default connect(mapStateToProps)(LoginComponent);
+export default withRouter(connect(mapStateToProps)(LoginComponent));

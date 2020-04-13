@@ -14,31 +14,26 @@ class DashboardComponent extends Component {
 
         const {authenticatedUser} = this.props;
 
+        const PrivateRoute = ({component: Component, ...rest}) => (
+            <Route {...rest} render={(props) => {
+                return authenticatedUser
+                    ? <Component {...props}/>
+                    : <Redirect to={{
+                        pathname: '/login',
+                        state: {from: props.location}
+                    }}/>
+            }}/>
+        );
+
         return (
             <React.Fragment>
                 <Switch>
                     <Route path="/" exact component={HomeComponent}/>
-                    <Route path="/add" render={() => {
-                        return authenticatedUser
-                            ? <ComposeComponent/>
-                            : <Redirect to="/login"/>;
-                    }}/>
-                    <Route path="/leaderboard" render={() => {
-                        return authenticatedUser
-                            ? <LeaderboardComponent/>
-                            : <Redirect to="/login"/>;
-                    }}/>
-                    <Route path="/questions/:id" render={({match}) => {
-                        return authenticatedUser
-                            ? <DetailComponent match={match}/>
-                            : <Redirect to="/login"/>;
-                    }}/>
-                    <Route path="/login" render={() => {
-                        return authenticatedUser
-                            ? <Redirect to="/"/>
-                            : <LoginComponent/>;
-                    }}/>
-                    <Route component={NotfoundComponent}/>
+                    <Route path="/login" exact component={LoginComponent}/>
+                    <PrivateRoute path="/add" component={ComposeComponent}/>
+                    <PrivateRoute path="/leaderboard" component={LeaderboardComponent}/>
+                    <PrivateRoute path="/questions/:id" component={DetailComponent}/>
+                    <Route path="*" component={NotfoundComponent}/>
                 </Switch>
             </React.Fragment>
         );
